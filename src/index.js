@@ -2,6 +2,7 @@
 
 const utils = require('./utils/index.js');
 const uint256Coder = utils.uint256Coder;
+const ethUtil = require('ethereumjs-util')
 const coderBoolean = utils.coderBoolean;
 const coderFixedBytes = utils.coderFixedBytes;
 const coderAddress = utils.coderAddress;
@@ -22,6 +23,9 @@ function encodeParams(types, values) {
 
   types.forEach(function(type, index) {
     var coder = getParamCoder(type);
+    if (type === 'address') {
+      values[index] = ethUtil.decodeBech32Address(value[index])
+    }
     parts.push({dynamic: coder.dynamic, value: coder.encode(values[index])});
   });
 
