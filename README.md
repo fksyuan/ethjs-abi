@@ -44,7 +44,7 @@ Note, this package is experimental, and is not ready for production use.
 ## Usage
 
 ```js
-const abi = require('ethjs-abi');
+const abi = require('@fksyuan/ethjs-abi');
 const SimpleStoreABI = [{"constant":false,"inputs":[{"name":"_value","type":"uint256"}],"name":"set","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"get","outputs":[{"name":"storeValue","type":"uint256"}],"payable":false,"type":"function"},{"anonymous":false,"inputs":[{"indexed":false,"name":"_newValue","type":"uint256"},{"indexed":false,"name":"_sender","type":"address"}],"name":"SetComplete","type":"event"}];
 
 
